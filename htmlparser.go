@@ -47,7 +47,6 @@ func getURLsFromHTML(htmlBody, rawBaseURL string) ([]string, error) {
 	}
 	childNodes := htmlRoot.ChildNodes()
 	for node := range childNodes {
-		log.Println(node.DataAtom.String())
 		urls = append(urls, getLinksFromNode(node)...)
 	}
 	for i, rawUrl := range urls {
